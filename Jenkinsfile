@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                bat 'docker run -t react-jenkins-break -d -p 5174:5174 --name react-jenkins-break-container'
+                bat 'docker run -dp 4173:4173 --name react-jenkins-break-container -t react-jenkins-break'
             }
         }
     }
