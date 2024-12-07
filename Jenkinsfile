@@ -1,6 +1,16 @@
 pipeline {
     agent any
     stages {
+        stage('Install') {
+            steps {
+                bat 'yarn install'
+            }
+        }
+        stage('Lint') {
+            steps {
+                bat 'yarn lint'
+            }
+        }
         stage('Build') {
             steps {
                 bat 'docker build -t react-jenkins-break .'
